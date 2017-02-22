@@ -5,6 +5,58 @@ var isInit = true,
     // additional requires
     viewModel = require('./homeView-view-model');
 
+var braintree = require('braintree');
+
+var gateway = braintree.connect({
+    environment: braintree.Environment.Sandbox,
+    merchantId: 'your_merchant_id',
+    publicKey: 'your_public_key',
+    privateKey: 'your_private_key'
+});
+
+gateway.transaction.sale({
+    amount: '5.00',
+    paymentMethodNonce: 'nonce-from-the-client',
+    options: {
+        submitForSettlement: true
+    }
+}, function (err, result) {
+    if (err) {
+        alert(err);
+        return;
+    }
+
+    if (result.success) {
+        alert('Transaction ID: ' + result.transaction.id);
+    } else {
+        alert(result.message);
+    }
+}); var gateway = braintree.connect({
+    environment: braintree.Environment.Sandbox,
+    merchantId: 'your_merchant_id',
+    publicKey: 'your_public_key',
+    privateKey: 'your_private_key'
+});
+
+gateway.transaction.sale({
+    amount: '5.00',
+    paymentMethodNonce: 'nonce-from-the-client',
+    options: {
+        submitForSettlement: true
+    }
+}, function (err, result) {
+    if (err) {
+        alert(err);
+        return;
+    }
+
+    if (result.success) {
+        alert('Transaction ID: ' + result.transaction.id);
+    } else {
+        alert(result.message);
+    }
+});
+
 // additional functions
 function pageLoaded(args) {
     var page = args.object;

@@ -5,7 +5,7 @@
       "type": "NativeScript:view",
       "name": "homeView",
       "components": [],
-      "title": "Home View",
+      "title": "HomeView",
       "addToNavigation": true,
       "icon": "home"
     }
