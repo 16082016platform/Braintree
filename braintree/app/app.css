@@ -1,4 +1,7 @@
-@import url('~/FlatIcon/font/flaticon.css');
+.icon {
+   font-family: 'Flaticon';
+   font-size: 48;
+}
 
 .km-icon {
     font-family: 'kendoui';

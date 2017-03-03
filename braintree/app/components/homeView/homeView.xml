@@ -2,7 +2,21 @@
     <Page.actionBar>
         <widgets:action-bar />
     </Page.actionBar>
+    
+    <StackLayout>
 
-    <StackLayout>        
+        <WebView height="50%" id="wv" src="{{ htmlString }}" height="800" />
+
+        <ListView height="50%" items="{{ glyphs }}">
+            <ListView.itemTemplate>
+                <StackLayout orientation="horizontal">
+                    <Label text="{{ icon }}" class="icon"/>
+                    <Label text="{{ code }}" />
+                </StackLayout>
+            </ListView.itemTemplate>
+        </ListView>
+
+        
     </StackLayout>
+
 </Page>
